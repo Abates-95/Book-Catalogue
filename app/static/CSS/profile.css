@@ -1,0 +1,18 @@
+.top-line{
+    margin-top: 100px;
+}
+
+.profile-container{
+    height: 500px;
+}
+
+.profile-box{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+}
+
+#profile-header{
+    margin-left: 10%;
+}

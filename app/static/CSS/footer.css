@@ -1,0 +1,26 @@
+footer{
+    margin-top: 5%;
+    bottom: 0px;
+    width: 100%;
+    
+}
+
+.c_right{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #ee7752;
+    border: 6px #23a6d5;
+    border-style: double;
+    width: 40%;
+    height: 45px;
+}
+
+.bottom{
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
