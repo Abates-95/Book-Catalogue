@@ -52,7 +52,7 @@ class Book(db.Model):
     author = db.Column(db.String(150), nullable = True)
     ISBN = db.Column(db.String(100), nullable = True)
     page_count = db.Column(db.String(20), nullable = True)
-    availability = db.Column(db.String(20), nullable = True)
+    availability = db.Column(db.string(20), nullable = True)
     book_token = db.Column(db.String(), db.ForeignKey('user.token'), nullable = False)
 
     def __init__(self,year_published,title,genre,author,ISBN,page_count,availability,book_token, id = ''):
