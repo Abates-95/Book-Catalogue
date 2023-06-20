@@ -67,14 +67,12 @@ def update_book(current_book_token, id):
     # Query database for a book with specific ID
     book = Book.query.get(id)
     # Update book data with retrieved data from request object
-    book.year_published = request.json.get('year_published', book.year_published)
-    book.title = request.json.get('title', book.title)
-    book.genre = request.json.get('genre', book.genre)
-    book.author = request.json.get('author', book.author)
-    book.ISBN = request.json.get('ISBN', book.ISBN)
-    book.page_count = request.json.get('page_count', book.page_count)
-    book.availability = request.json.get('availability', book.availability)
-    book.book_token = current_book_token.token
+    fields_to_update = request.json.keys()
+
+    for field in fields_to_update:
+        if hasattr(book, field):
+            setattr(book, field, request.json[field])
+            book.book_token = current_book_token.token
 
     # Commit changes to database
     db.session.commit()
